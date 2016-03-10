@@ -1,0 +1,17 @@
+---
+# sets up Precona repo
+
+- name: get Percona public key
+  apt_key: url=http://www.percona.com/downloads/RPM-GPG-KEY-percona
+           state=present
+
+- name: add Percona repository
+  apt_repository: repo='deb http://repo.percona.com/apt {{ ansible_distribution_release }} main'
+                  state=present
+
+- name: add Percona source repository
+  apt_repository: repo='deb-src http://repo.percona.com/apt {{ ansible_distribution_release }} main'
+                  state=present
+
+- name: update apt cache
+  apt: update_cache=yes

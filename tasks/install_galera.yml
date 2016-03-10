@@ -1,0 +1,9 @@
+---
+# sets up Percona XtraDB Cluster
+# Limitations: https://www.percona.com/doc/percona-xtradb-cluster/5.6/limitation.html
+
+- name: check if software-properties-common is installed
+  apt: pkg=software-properties-common state=present
+
+#- name: install percona-xtradb-cluster
+#  apt: pkg=percona-xtradb-cluster state=present

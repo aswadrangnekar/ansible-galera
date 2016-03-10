@@ -1,2 +1,9 @@
 ---
-# tasks file for aswadr.ansible-galera
+# main task file
+
+#- debug: msg="hostvars={{hostvars}}"
+#- debug: msg="address {{ hostvars[inventory_hostname].ansible_default_ipv4.address }}  {{ ansible_eth0.ipv4.address }}"
+#- debug: msg="vars={{vars}}"
+#- debug: msg="groups={{groups}}"
+- include: precona_repo.yml
+- include: install_galera.yml
